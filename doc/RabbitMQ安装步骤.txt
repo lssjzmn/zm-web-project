@@ -11,7 +11,7 @@
 
 3.配置rabbitmq服务
 	cmd命令框，切换至**\rabbitmq_server-3.7.7\sbin目录
-	安装web控制台插件，命令：rabbitmq-plugins.bat enable rabbitmq_management
+	安装web控制台插件，命令：rabbitmq-plugins enable rabbitmq_management
 	cmd框输入rabbitmq-service.bat install ,rabbitmq-service.bat start开启系统服务
 
 4.tips
