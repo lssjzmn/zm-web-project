@@ -10,9 +10,17 @@
 <head>
     <link rel="stylesheet" type="text/css" media="all"
           href="${pageContext.request.contextPath}/css/main.css"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="${pageContext.request.contextPath}/css/buttons.css"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/buz/login.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/libs/niceadmin/jquery-1.8.3.min.js"></script>
+
 </head>
 <body>
 <h2>Hello World!</h2>
-<a href="/entry/welcome.html">跳转login</a>
+<br/>
+<a href="/entry/welcome/10086.html">跳转login</a>
+<br/>
+<button id="loginBtn" class="button-primary" onclick="loginEvent()">login</button>
 </body>
 </html>
