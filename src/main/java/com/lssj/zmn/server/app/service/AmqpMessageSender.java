@@ -1,4 +1,4 @@
-package com.lssj.zmn.server.app.service.rabbitmq;
+package com.lssj.zmn.server.app.service;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
