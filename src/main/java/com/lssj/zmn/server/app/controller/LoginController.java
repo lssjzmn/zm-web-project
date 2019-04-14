@@ -27,8 +27,12 @@ public class LoginController {
 
     @RequestMapping(value = "/welcome/{id}.html", method = RequestMethod.GET)
     public String login(@PathVariable("id") Integer id, HttpServletRequest request, HttpServletResponse response, Model model) {
-        amqpMessageSender.sendMessage("rabbitmq_queue_routingkey",
-                "this is a rabbitmq message for rabbitmq_queue_routingkey.id = " + id);
+        LoginRet rabbitLogin = new LoginRet();
+        rabbitLogin.setId(10086L);
+        rabbitLogin.setStatus("200 OK");
+        rabbitLogin.setInfo("this is a rabbitmq message of rabbitLogin");
+        rabbitLogin.getBody().put("bofyInfo", 8888);
+        amqpMessageSender.sendMessage("rabbitmq_queue_routingkey", rabbitLogin);
         amqpMessageSender.sendMessage("rabbitmq_queue_routingkey_10000",
                 "this is a rabbitmq message for rabbitmq_queue_routingkey_10000.id = " + id);
         model.addAttribute("id", id);
@@ -39,7 +43,10 @@ public class LoginController {
     @ResponseBody
     public Object requestLogin() {
         LoginRet loginRet = new LoginRet();
+        loginRet.setId(10086L);
+        loginRet.setStatus("200 OK");
         loginRet.setInfo("login success.");
+        loginRet.getBody().put("bofyInfo", 8888);
         String ret = JSONModel.convertObjectToJSON(loginRet);
         return ret;
     }
