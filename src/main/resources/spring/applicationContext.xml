@@ -92,7 +92,7 @@
     <bean id="amqpMessageListener" class="com.lssj.zmn.server.app.service.AmqpMessageListener"/>
     <bean id="amqpMessageListenerNew" class="com.lssj.zmn.server.app.service.AmqpMessageListenerNew"/>
 
-    <rabbit:listener-container connection-factory="connectionFactory" acknowledge="auto">
+    <rabbit:listener-container connection-factory="connectionFactory" acknowledge="manual">
         <rabbit:listener queues="${rabbitmq.queue}" ref="amqpMessageListener"/>
         <rabbit:listener queues="${rabbitmq.queue}_10000" ref="amqpMessageListenerNew"/>
     </rabbit:listener-container>
