@@ -11,6 +11,6 @@ public class AmqpMessageListenerNew implements ChannelAwareMessageListener {
     @Override
     public void onMessage(Message message, Channel channel) throws Exception {
         System.out.println("message_10000: " + message.toString());
-        channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, true);//重新入队
+        channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, false);//重新入队
     }
 }

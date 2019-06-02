@@ -33,7 +33,7 @@ public class LoginController {
         rabbitLogin.setInfo("this is a rabbitmq message of rabbitLogin");
         rabbitLogin.getBody().put("bofyInfo", 8888);
         amqpMessageSender.sendMessage("rabbitmq_queue_routingkey", rabbitLogin);
-        amqpMessageSender.sendMessage("rabbitmq_queue_routingkey_10000",
+        amqpMessageSender.sendMessage("rabbitmq_queue_routingkey",
                 "this is a rabbitmq message for rabbitmq_queue_routingkey_10000.id = " + id);
         model.addAttribute("id", id);
         return "/login";
